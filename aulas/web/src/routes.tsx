@@ -9,7 +9,6 @@ const Routes = () => {
         <BrowserRouter>
             <Route component={Home} path="/" exact/>
             <Route component={CreatPoint} path="/create-point"/>
-
         </BrowserRouter>
     )
 }
