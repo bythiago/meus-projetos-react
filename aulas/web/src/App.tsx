@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import Home from './pages/Home';
-import CreatPoint from './pages/CreatePoint';
-
+import Routes from './routes';
 
 function App() {
   return (
     <div>
-      <Home />
-      <CreatPoint/>
+      <Routes></Routes>
     </div>
   );
 }
