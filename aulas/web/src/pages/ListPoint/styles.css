@@ -9,3 +9,35 @@
   float: left;
 }
 
+#page-create-point .list{
+  margin: 40px 0;
+}
+
+#page-create-point .list .points {
+  margin: 40px 0;
+  padding: 64px;
+  max-width: 50%;
+  background: #FFF;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-create-point .list h2,
+#page-create-point .list .points h3{
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 41px;
+  color: #322153;
+}
+
+#page-create-point .list .points p{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: #6C6C80;
+}
