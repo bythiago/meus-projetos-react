@@ -3,6 +3,7 @@ import React from 'react';
 import { FiLogIn } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
+import '../CreatePoint/styles.css';
 import './styles.css';
 import logo from '../../assets/logo.svg';
 
@@ -17,11 +18,18 @@ const Home = () => {
                 <main>
                     <h1>Seu marketplace de coleta de resíduos.</h1>
                     <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
-                
-                    <Link to="/create-point">
-                        <span><FiLogIn/></span>
-                        <strong>Cadastre um ponto de coleta</strong>
-                    </Link>
+
+                    <div className="list-button">
+                        <Link to="/create-point">
+                            <span><FiLogIn/></span>
+                            <strong>Cadastre um ponto de coleta</strong>
+                        </Link>
+
+                        <Link to="/list-point">
+                            <span><FiLogIn/></span>
+                            <strong>Liste os pontos de coleta</strong>
+                        </Link>
+                    </div>
                 </main>
             </div>
         </div>

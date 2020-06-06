@@ -1,0 +1,11 @@
+#page-home .content main h1,
+#page-home .content main p {
+  width: 75%;
+}
+
+#page-home .content main .list-button a {
+  width: 50vh !important;
+  margin: 5vh 2.5vh 0 0;
+  float: left;
+}
+
