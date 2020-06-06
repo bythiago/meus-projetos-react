@@ -137,7 +137,7 @@ const CreatPoint = () => {
     }
 
     return (
-        <div id="page-create-point">
+        <div id="page-create-point" className="alert-success">
             <header>
                 <Link to="/">
                     <img src={logo} alt="Ecoleta"/>
