@@ -18,9 +18,14 @@ interface IBGEUFResponse {
     sigla: string
 }
 
+interface IBGECityResponse {
+    nome: string
+}
+
 const CreatPoint = () => {
     const [items, setItems] = useState<Item[]>([]);
     const [ufs, setUfs] = useState<string[]>([]);
+    const [cities, setCities] = useState<string[]>([]);
     const [selectedUf, setSelectedUf] = useState('0');
 
     useEffect(() => {
@@ -29,13 +34,8 @@ const CreatPoint = () => {
         });
     }, []);
 
-    function handleSelectUf(event: ChangeEvent<HTMLSelectElement>){
-        const uf = event.target.value;
-        setSelectedUf(uf);
-    }
-
     useEffect(() => {
-        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
+        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome').then(response => {
             const ufInitials = response.data.map(uf => uf.sigla);
 
             setUfs(ufInitials);
@@ -43,8 +43,23 @@ const CreatPoint = () => {
     }, []);
 
     useEffect(() => {
-        //https://servicodados.ibge.gov.br/api/v1/localidades/estados/{UF}/municipios
-    }, []);
+        if(selectedUf === '0'){
+            return;
+        }
+
+        axios
+        .get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`)
+        .then(response => {
+            const cityNames = response.data.map(city => city.nome);
+
+            setCities(cityNames);
+        });
+    }, [selectedUf]);
+
+    function handleSelectUf(event: ChangeEvent<HTMLSelectElement>){
+        const uf = event.target.value;
+        setSelectedUf(uf);
+    }
 
     return (
         <div id="page-create-point">
@@ -122,6 +137,9 @@ const CreatPoint = () => {
                             <label htmlFor="city">Cidade</label>
                             <select name="city" id="city">
                                 <option value="0">Selecione uma Cidade</option>
+                                {cities.map(city => (
+                                    <option key={city} value={city}>{city}</option>
+                                ))}
                             </select>
                         </div>
                     </div>
