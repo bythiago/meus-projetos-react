@@ -14,13 +14,14 @@
 }
 
 #page-create-point .list .points {
-  margin: 40px 0;
+  margin: 2em 0 0 2em;
   padding: 64px;
   max-width: 50%;
   background: #FFF;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  float: left;
 }
 
 #page-create-point .list h2,
@@ -33,6 +34,19 @@
   color: #322153;
 }
 
+#page-create-point .list strong {
+  padding: 1em 0;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 14px;
+
+  /* identical to box height */
+
+  /* Títulos */
+  color: #322153;
+}
+
 #page-create-point .list .points p{
   font-family: Roboto;
   font-style: normal;
@@ -40,4 +54,51 @@
   font-size: 16px;
   line-height: 26px;
   color: #6C6C80;
+}
+
+a.btn-information {
+  width: 100%;
+  max-width: 360px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.btn-information span {
+  display: block;
+  background: rgba(0, 0, 0, 0.08);
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.btn-information strong, .btn-information svg {
+  flex: 1 1 !important;
+  text-align: center !important;
+  color: #FFF !important;
+}
+
+.col-6 {
+  text-align: center;
+  width: 50%;
+  float: left;
+  display: grid;
+  padding: 0 0.5em 0 0;
+}
+
+.col-12 {
+   width: 100%;
+  min-height: 50vh;
+  float: left;
+  display: grid;
+}
+
+.map {
+  padding: 1em 0;
 }
